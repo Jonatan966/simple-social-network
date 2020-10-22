@@ -36,4 +36,10 @@ export const Container = styled.div`
     label {
         cursor: pointer;
     }
+
+    @media(max-width: 800px) {
+        input {
+            flex: 1;
+        }
+    }
 `;

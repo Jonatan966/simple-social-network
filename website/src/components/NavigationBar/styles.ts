@@ -36,7 +36,7 @@ export const Container = styled.div`
 
     .plusBtn {
         transform: translateY(-60%);
-        width: 5%;
+        width: 7.5%;
         margin: 0 25px;
 
         font-size: 2rem;
@@ -51,4 +51,9 @@ export const Container = styled.div`
         }
     }
 
+    @media(max-width: 800px) {
+        a {
+            flex-grow: 1;
+        }
+    }
 `;

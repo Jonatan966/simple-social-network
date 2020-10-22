@@ -112,4 +112,8 @@ export const Container = styled.div`
         border: none;
         background: gray;
     }
+
+    @media(max-width: 1000px) {
+        width: 90%;
+    }
 `;

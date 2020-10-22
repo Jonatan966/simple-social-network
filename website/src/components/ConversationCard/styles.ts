@@ -87,4 +87,8 @@ export const Container = styled.div`
         margin-right: 10px;
         border: 2px solid #4E4E4E;
     }
+
+    @media(max-width: 850px) {
+        width: 85%;
+    }
 `;
