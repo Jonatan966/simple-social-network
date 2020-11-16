@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import backImg from '../../images/tests-img2.png';
 import userImg from '../../images/tests-img.jpg';
 import { Container } from './styles';
 
 const UserProfileHeader: React.FC = () => {
+  const locator = useLocation();
+
   return (
     <Container>
       <img src={backImg} alt=""/>
@@ -38,9 +40,26 @@ const UserProfileHeader: React.FC = () => {
       <hr/>
 
       <label className="profileSubMenus">
-        <Link className="selected" to="?">Publicações</Link>
-        <Link to="?">Amigos</Link>
-        <Link to="?">Sobre</Link>
+        <Link 
+          className={locator.pathname === '/profile/1' ? 'selected': ''} 
+          to="/profile/1"
+        >
+          Publicações
+        </Link>
+
+        <Link 
+          className={locator.pathname.includes('friends') ? 'selected': ''} 
+          to="/profile/1/friends"
+        >
+          Amigos
+        </Link>
+
+        <Link 
+          className={locator.pathname.includes('about') ? 'selected': ''} 
+          to="/profile/1/about"
+        >
+          Sobre
+        </Link>
       </label>
     </Container>
   );

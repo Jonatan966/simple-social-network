@@ -3,7 +3,7 @@ import { FiHeart, FiBookmark, FiMessageCircle } from 'react-icons/fi';
 
 import { Container } from './styles';
 
-const PostCard: React.FC = () => {
+const PostCard: React.FC<{viewDetails?: Function}> = ({viewDetails}) => {
   return (
     <Container>
       <div className="cardTop">
@@ -23,7 +23,10 @@ const PostCard: React.FC = () => {
 
         <div className="postContent">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aperiam harum, veritatis, itaque dolorem ipsum a quasi sit dolorum optio, minus neque deleniti enim veniam quos rem architecto! A, tempore?</p>
-          <button>Clique aqui para ver mais</button>
+          {
+            viewDetails &&
+            <button onClick={() => viewDetails()}>Clique aqui para ver mais</button>
+          }
         </div>
       </div>
     </Container>

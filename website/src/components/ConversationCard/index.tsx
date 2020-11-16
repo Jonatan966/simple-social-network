@@ -4,7 +4,7 @@ import {FiSettings} from 'react-icons/fi';
 import testImg from '../../images/tests-img.jpg';
 import { Container } from './styles';
 
-const ConversationCard: React.FC = () => {
+const ConversationCard: React.FC<{onClick: Function}> = ({onClick}) => {
   return (
     <Container>
       <img src={testImg} alt="Pessoa Tal"/>
@@ -20,7 +20,7 @@ const ConversationCard: React.FC = () => {
           <label><strong>Jonas [25/02/2020]: </strong>Bla bla bla bla bla</label>
         </div>
 
-        <button>Abrir Conversa</button>
+        <button onClick={() => onClick()}>Abrir Conversa</button>
       </div>
     </Container>
   );
